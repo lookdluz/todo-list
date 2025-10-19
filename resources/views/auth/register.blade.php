@@ -1,19 +1,20 @@
 <x-guest-layout>
-    <div class="max-w-md mx-auto card-glass p-6">
-        <h1 class="h1 mb-2">Criar conta</h1>
-        <p class="text-white/70 mb-6">Comece a organizar seu dia.</p>
+    <div class="auth-wrap">
+        <h1 class="auth-h1">Criar conta ✨</h1>
+        <p class="auth-sub">Organize seu dia e alcance mais objetivos</p>
 
-        <form method="POST" action="{{ route('register') }}" class="space-y-4">
+        <form method="POST" action="{{ route('register') }}" class="auth-form">
             @csrf
-            <x-ui.input name="name" placeholder="Seu nome" required />
-            <x-ui.input type="email" name="email" placeholder="Seu e-mail" required />
+            <x-ui.input name="name" placeholder="Nome completo" required />
+            <x-ui.input type="email" name="email" placeholder="E-mail" required />
             <x-ui.input type="password" name="password" placeholder="Senha" required />
             <x-ui.input type="password" name="password_confirmation" placeholder="Confirmar senha" required />
-            <x-ui.button type="submit" class="w-full">Criar conta</x-ui.button>
+            <x-ui.button type="submit" class="w-full">Registrar</x-ui.button>
         </form>
 
-        <p class="mt-4 text-center text-sm text-white/80">
-            Já tem conta? <a href="{{ route('login') }}" class="text-cyan-300 hover:underline">Entre</a>
+        <p class="mt-6 text-center text-sm text-white/80">
+            Já tem conta?
+            <a href="{{ route('login') }}" class="auth-link">Entrar</a>
         </p>
     </div>
 </x-guest-layout>

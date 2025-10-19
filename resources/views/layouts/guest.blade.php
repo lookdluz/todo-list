@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ config('app.name','To‑Do') }}</title>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <title>{{ config('app.name','To-Do') }}</title>
+        @vite(['resources/css/app.css','resources/js/app.js'])
     </head>
-    <body class="page-wrap">
-        <main class="min-h-screen grid place-items-center p-6">
+    <body class="page-wrap grid place-items-center min-h-screen p-6">
+        <div x-data="{ show: false }" x-init="show = true" x-transition.opacity.duration.500>
             {{ $slot }}
-        </main>
+        </div>
     </body>
 </html>
